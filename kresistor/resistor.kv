@@ -1,0 +1,51 @@
+#:kivy 1.10.0
+
+<Resistor@BoxLayout>:
+    orientation: 'horizontal'
+
+    Wire:
+        id: left_wire
+
+    Border:
+        id: left_border
+
+    Colour:
+        id: first_color
+
+    Separation:
+        id: first_separation
+
+    Colour:
+        id: second_color
+
+    Separation:
+        id: second_separation
+
+    Colour:
+        id: third_color
+
+    Separation:
+        id: third_separation
+
+    Colour:
+        id: fourth_color
+
+    Border:
+        id: left_border
+
+    Wire:
+        id: right_wire
+
+<Wire@AnchorLayout>:
+    anchor_x: 'center'
+    anchor_y: 'center'
+
+<Border@AnchorLayout>:
+    anchor_x: 'center'
+    anchor_y: 'center'
+
+<Colour@DropDown>:
+
+<Separation@AnchorLayout>:
+    anchor_x: 'center'
+    anchor_y: 'center'
