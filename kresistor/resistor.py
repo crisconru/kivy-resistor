@@ -10,6 +10,7 @@ class Resistor(BoxLayout):
 class Colour(DropDown):
     pass
 
+
 class Wire(AnchorLayout):
     pass
 
