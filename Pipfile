@@ -13,6 +13,7 @@ pytest-cov = "*"
 pylint = "*"
 "flake8" = "*"
 mypy = "*"
+pylama = "*"
 v = {version = "*", editable = true}
 
 [requires]
