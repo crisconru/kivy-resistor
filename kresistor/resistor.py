@@ -1,23 +1,19 @@
-from kivy.uix.dropdown import DropDown
-from kivy.uix.anchorlayout import AnchorLayout
+from pathlib import Path
+from kivy.lang.builder import Builder
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.anchorlayout import AnchorLayout
 
 
-class Resistor(BoxLayout):
+kv_file = str(Path(__file__))[:-3] + '.kv'
+Builder.load_file(kv_file)
+
+
+class ResistorFour(BoxLayout):
+    pass
+
+class ResistorFive(BoxLayout):
     pass
 
 
-class Colour(DropDown):
-    pass
-
-
-class Wire(AnchorLayout):
-    pass
-
-
-class Boder(AnchorLayout):
-    pass
-
-
-class Separation(AnchorLayout):
+class Resistor(AnchorLayout):
     pass

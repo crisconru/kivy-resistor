@@ -1,51 +1,65 @@
-#:kivy 1.10.0
+#:kivy 1.0.0
+#:import Wire parts.wire.Wire
+#:import Border parts.border.Border
+#:import FirstBand parts.bands.FirstBand
+#:import SecondBand parts.bands.SecondBand
+#:import ThirdBand parts.bands.ThirdBand
+#:import MultiplierBand parts.bands.MultiplierBand
+#:import ToleranceBand parts.bands.ToleranceBand
+#:import Separation parts.separation.Separation
 
-<Resistor@BoxLayout>:
+<ResistorFour@BoxLayout>:
+    id: resistor_four
     orientation: 'horizontal'
-
     Wire:
         id: left_wire
-
     Border:
         id: left_border
-
-    Colour:
-        id: first_color
-
+    FirstBand:
+        id: first_band
     Separation:
         id: first_separation
-
-    Colour:
-        id: second_color
-
+    SecondBand:
+        id: second_band
     Separation:
         id: second_separation
-
-    Colour:
-        id: third_color
-
+    MultiplierBand:
+        id: third_band
     Separation:
         id: third_separation
-
-    Colour:
-        id: fourth_color
-
+    ToleranceBand:
+        id: fourth_band
     Border:
         id: left_border
-
     Wire:
         id: right_wire
 
-<Wire@AnchorLayout>:
-    anchor_x: 'center'
-    anchor_y: 'center'
-
-<Border@AnchorLayout>:
-    anchor_x: 'center'
-    anchor_y: 'center'
-
-<Colour@DropDown>:
-
-<Separation@AnchorLayout>:
-    anchor_x: 'center'
-    anchor_y: 'center'
+<ResistorFive@BoxLayout>:
+    id: resistor_five
+    orientation: 'horizontal'
+    Wire:
+        id: left_wire
+    Border:
+        id: left_border
+    FirstBand:
+        id: first_band
+    Separation:
+        id: first_separation
+    SecondBand:
+        id: second_band
+    Separation:
+        id: second_separation
+    ThirdBand:
+        id: third_band
+    Separation:
+        id: second_separation
+    MultiplierBand:
+        id: third_band
+    Separation:
+        id: third_separation
+    ToleranceBand:
+        id: fourth_band
+    Border:
+        id: left_border
+    Wire:
+        id: right_wire
