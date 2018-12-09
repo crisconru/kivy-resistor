@@ -1,0 +1,299 @@
+#:kivy 1.0.0
+
+<ColorButton@Button>:
+    background_normal: ''
+
+<DropButton@ColorButton>:
+    size_hint_y: None
+    height: '48dp'
+
+<FirstBand>:
+    id: first_band
+    ColorButton:
+        id: btn
+        background_color: first_band.brown
+        on_release: first_dropdown.open(self)
+    DropDown:
+        id: first_dropdown
+        on_select: btn.background_color = args[1]
+        DropButton:
+            id: btn_brown
+            background_color: first_band.brown
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(1)
+        DropButton:
+            id: btn_blue
+            background_color: first_band.red
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(2)
+        DropButton:
+            id: btn_orange
+            background_color: first_band.orange
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(3)
+        DropButton:
+            id: btn_yellow
+            background_color: first_band.yellow
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(4)
+        DropButton:
+            id: btn_green
+            background_color: first_band.green
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(5)
+        DropButton:
+            id: btn_blue
+            background_color: first_band.blue
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(6)
+        DropButton:
+            id: btn_violet
+            background_color: first_band.violet
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(7)
+        DropButton:
+            id: btn_grey
+            background_color: first_band.grey
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(8)
+        DropButton:
+            id: btn_white
+            background_color: first_band.white
+            on_press: first_dropdown.select(self.background_color)
+            on_release: first_band.change_value(9)
+<SecondBand>:
+    id: second_band
+    ColorButton:
+        id: btn
+        background_color: second_band.black
+        on_release: second_dropdown.open(self)
+    DropDown:
+        id: second_dropdown
+        on_select: btn.background_color = args[1]
+        DropButton:
+            id: btn_black
+            background_color: second_band.black
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(0)
+        DropButton:
+            id: btn_brown
+            background_color: second_band.brown
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(1)
+        DropButton:
+            id: btn_blue
+            background_color: second_band.red
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(2)
+        DropButton:
+            id: btn_orange
+            background_color: second_band.orange
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(3)
+        DropButton:
+            id: btn_yellow
+            background_color: second_band.yellow
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(4)
+        DropButton:
+            id: btn_green
+            background_color: second_band.green
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(5)
+        DropButton:
+            id: btn_blue
+            background_color: second_band.blue
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(6)
+        DropButton:
+            id: btn_violet
+            background_color: second_band.violet
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(7)
+        DropButton:
+            id: btn_grey
+            background_color: second_band.grey
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(8)
+        DropButton:
+            id: btn_white
+            background_color: second_band.white
+            on_press: second_dropdown.select(self.background_color)
+            on_release: second_band.change_value(9)
+<ThirdBand>:
+    id: third_band
+    ColorButton:
+        id: btn
+        background_color: third_band.black
+        on_release: third_dropdown.open(self)
+    DropDown:
+        id: third_dropdown
+        on_select: btn.background_color = args[1]
+        DropButton:
+            id: btn_black
+            background_color: third_band.black
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(0)
+        DropButton:
+            id: btn_brown
+            background_color: third_band.brown
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(1)
+        DropButton:
+            id: btn_blue
+            background_color: third_band.red
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(2)
+        DropButton:
+            id: btn_orange
+            background_color: third_band.orange
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(3)
+        DropButton:
+            id: btn_yellow
+            background_color: third_band.yellow
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(4)
+        DropButton:
+            id: btn_green
+            background_color: third_band.green
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(5)
+        DropButton:
+            id: btn_blue
+            background_color: third_band.blue
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(6)
+        DropButton:
+            id: btn_violet
+            background_color: third_band.violet
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(7)
+        DropButton:
+            id: btn_grey
+            background_color: third_band.grey
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(8)
+        DropButton:
+            id: btn_white
+            background_color: third_band.white
+            on_press: third_dropdown.select(self.background_color)
+            on_release: third_band.change_value(9)
+<MultiplierBand>:
+    id: multiplier_band
+    ColorButton:
+        id: btn
+        background_color: multiplier_band.black
+        on_release: multiplier_dropdown.open(self)
+    DropDown:
+        id: multiplier_dropdown
+        on_select: btn.background_color = args[1]
+        DropButton:
+            id: btn_black
+            background_color: multiplier_band.black
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(0)
+        DropButton:
+            id: btn_brown
+            background_color: multiplier_band.brown
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(1)
+        DropButton:
+            id: btn_blue
+            background_color: multiplier_band.red
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(2)
+        DropButton:
+            id: btn_orange
+            background_color: multiplier_band.orange
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(3)
+        DropButton:
+            id: btn_yellow
+            background_color: multiplier_band.yellow
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(4)
+        DropButton:
+            id: btn_green
+            background_color: multiplier_band.green
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(5)
+        DropButton:
+            id: btn_blue
+            background_color: multiplier_band.blue
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(6)
+        DropButton:
+            id: btn_violet
+            background_color: multiplier_band.violet
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(7)
+        DropButton:
+            id: btn_grey
+            background_color: multiplier_band.grey
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(8)
+        DropButton:
+            id: btn_white
+            background_color: multiplier_band.white
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(9)
+        DropButton:
+            id: btn_gold
+            background_color: multiplier_band.gold
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(-1)
+        DropButton:
+            id: btn_silver
+            background_color: multiplier_band.silver
+            on_press: multiplier_dropdown.select(self.background_color)
+            on_release: multiplier_band.change_value(-2)
+<ToleranceBand>:
+    id: tolerance_band
+    ColorButton:
+        id: btn
+        background_color: tolerance_band.brown
+        on_release: tolerance_dropdown.open(self)
+    DropDown:
+        id: tolerance_dropdown
+        on_select: btn.background_color = args[1]
+        DropButton:
+            id: btn_brown
+            background_color: tolerance_band.brown
+            on_press: tolerance_dropdown.select(self.background_color)
+            on_release: tolerance_band.change_value(1.0)
+        DropButton:
+            id: btn_blue
+            background_color: tolerance_band.red
+            on_press: tolerance_dropdown.select(self.background_color)
+            on_release: tolerance_band.change_value(2.0)
+        DropButton:
+            id: btn_green
+            background_color: tolerance_band.green
+            on_press: tolerance_dropdown.select(self.background_color)
+            on_release: tolerance_band.change_value(0.5)
+        DropButton:
+            id: btn_blue
+            background_color: tolerance_band.blue
+            on_press: tolerance_dropdown.select(self.background_color)
+            on_release: tolerance_band.change_value(0.25)
+        DropButton:
+            id: btn_violet
+            background_color: tolerance_band.violet
+            on_press: tolerance_dropdown.select(self.background_color)
+            on_release: tolerance_band.change_value(0.1)
+        DropButton:
+            id: btn_grey
+            background_color: tolerance_band.grey
+            on_press: tolerance_dropdown.select(self.background_color)
+            on_release: tolerance_band.change_value(0.05)
+        DropButton:
+            id: btn_gold
+            background_color: tolerance_band.gold
+            on_press: tolerance_dropdown.select(self.background_color)
+            on_release: tolerance_band.change_value(5.0)
+        DropButton:
+            id: btn_silver
+            background_color: tolerance_band.silver
+            on_press: tolerance_dropdown.select(self.background_color)
+            on_release: tolerance_band.change_value(10.0)

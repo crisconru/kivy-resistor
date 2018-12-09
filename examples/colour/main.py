@@ -1,7 +1,7 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
-from kresistor.parts.bands import FirstBand, SecondBand, ThirdBand
-from kresistor.parts.bands import MultiplierBand, ToleranceBand
+from kresistor.components.bands import FirstBand, SecondBand, ThirdBand
+from kresistor.components.bands import MultiplierBand, ToleranceBand
 
 
 class Main(BoxLayout):
