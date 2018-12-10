@@ -33,6 +33,15 @@ class FirstBand(BandColours):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.ids.first_dropdown.select(self.brown)
+        self.colors = {'1': self.brown,
+                       '2': self.red,
+                       '3': self.orange,
+                       '4': self.yellow,
+                       '5': self.green,
+                       '6': self.blue,
+                       '7': self.violet,
+                       '8': self.grey,
+                       '9': self.white}
         Logger.info('FirstBand: initialized')
 
     def change_value(self, data):
@@ -46,6 +55,16 @@ class SecondBand(BandColours):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.ids.second_dropdown.select(self.black)
+        self.colors = {'0': self.black,
+                       '1': self.brown,
+                       '2': self.red,
+                       '3': self.orange,
+                       '4': self.yellow,
+                       '5': self.green,
+                       '6': self.blue,
+                       '7': self.violet,
+                       '8': self.grey,
+                       '9': self.white}
         Logger.info('SecondBand: initialized')
 
     def change_value(self, data):
@@ -59,6 +78,16 @@ class ThirdBand(BandColours):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.ids.third_dropdown.select(self.black)
+        self.colors = {'0': self.black,
+                       '1': self.brown,
+                       '2': self.red,
+                       '3': self.orange,
+                       '4': self.yellow,
+                       '5': self.green,
+                       '6': self.blue,
+                       '7': self.violet,
+                       '8': self.grey,
+                       '9': self.white}
         Logger.info('ThirdBand: initialized')
 
     def change_value(self, data):
@@ -72,6 +101,18 @@ class MultiplierBand(BandColours):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.ids.multiplier_dropdown.select(self.black)
+        self.colors = {'1': self.black,
+                       '10': self.brown,
+                       '100': self.red,
+                       '1000': self.orange,
+                       '10000': self.yellow,
+                       '100000': self.green,
+                       '1000000': self.blue,
+                       '10000000': self.violet,
+                       '100000000': self.grey,
+                       '1000000000': self.white,
+                       '0.1': self.gold,
+                       '0.01': self.silver}
         Logger.info('MultiplierBand: initialized')
 
     def change_value(self, data):
@@ -85,8 +126,35 @@ class ToleranceBand(BandColours):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.ids.tolerance_dropdown.select(self.brown)
+        self.colors = {'1.0': self.brown,
+                       '2.0': self.red,
+                       '0.5': self.green,
+                       '0.25': self.blue,
+                       '0.1': self.violet,
+                       '0.05': self.grey,
+                       '5': self.gold,
+                       '10': self.silver}
         Logger.info('ToleranceBand: initialized')
 
     def change_value(self, data):
         self.value = data
         Logger.info(f'ToleranceBand: value = {self.value}')
+
+
+class PPMBand(BandColours):
+    value = NumericProperty(1.0)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.ids.ppm_dropdown.select(self.brown)
+        self.colors = {'100': self.brown,
+                       '50': self.red,
+                       '15': self.orange,
+                       '25': self.yellow,
+                       '10': self.blue,
+                       '5': self.violet}
+        Logger.info('PPMBand: initialized')
+
+    def change_value(self, data):
+        self.value = data
+        Logger.info(f'PPMBand: value = {self.value}')
