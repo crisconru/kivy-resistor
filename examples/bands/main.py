@@ -1,7 +1,10 @@
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
 from kresistor.components.bands import FirstBand, SecondBand, ThirdBand
 from kresistor.components.bands import MultiplierBand, ToleranceBand, PPMBand
+
+Window.clearcolor = (1, 1, 1, 1)
 
 
 class Main(BoxLayout):

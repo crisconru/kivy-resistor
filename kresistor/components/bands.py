@@ -1,7 +1,7 @@
 from pathlib import Path
 from kivy.lang.builder import Builder
 from kivy.logger import Logger
-from kivy.properties import ListProperty, NumericProperty
+from kivy.properties import ListProperty, NumericProperty, DictProperty
 from kivy.uix.anchorlayout import AnchorLayout
 
 kv_file = str(Path(__file__))[:-3] + '.kv'
@@ -29,10 +29,11 @@ class BandColours(AnchorLayout):
 
 class FirstBand(BandColours):
     value = NumericProperty(1)
+    colors = DictProperty()
 
     def __init__(self, **kwargs):
+        Logger.debug(f'FirstBand: __init__( {kwargs} )')
         super().__init__(**kwargs)
-        self.ids.first_dropdown.select(self.brown)
         self.colors = {'1': self.brown,
                        '2': self.red,
                        '3': self.orange,
@@ -42,19 +43,24 @@ class FirstBand(BandColours):
                        '7': self.violet,
                        '8': self.grey,
                        '9': self.white}
-        Logger.info('FirstBand: initialized')
+        self.ids.first_dropdown.select(self.value)
+        Logger.debug('FirstBand: initialized')
 
-    def change_value(self, data):
+    def change_value(self, data: int):
+        Logger.debug(f'FirstBand: change_value( {data} )')
         self.value = data
-        Logger.info(f'FirstBand: value = {self.value}')
+        self.ids.first_btn.background_color = self.colors[str(data)]
+        Logger.debug(f'FirstBand: value = {self.value}, '
+                     f'background_color = {self.colors[str(data)]}')
 
 
 class SecondBand(BandColours):
     value = NumericProperty(0)
+    colors = DictProperty()
 
     def __init__(self, **kwargs):
+        Logger.debug(f'SecondBand: __init__( {kwargs} )__')
         super().__init__(**kwargs)
-        self.ids.second_dropdown.select(self.black)
         self.colors = {'0': self.black,
                        '1': self.brown,
                        '2': self.red,
@@ -65,19 +71,24 @@ class SecondBand(BandColours):
                        '7': self.violet,
                        '8': self.grey,
                        '9': self.white}
-        Logger.info('SecondBand: initialized')
+        self.ids.second_dropdown.select(self.value)
+        Logger.debug('SecondBand: initialized')
 
-    def change_value(self, data):
+    def change_value(self, data: int):
+        Logger.debug(f'SecondBand: change_value( {data} )')
         self.value = data
-        Logger.info(f'SecondBand: value = {self.value}')
+        self.ids.second_btn.background_color = self.colors[str(data)]
+        Logger.debug(f'SecondBand: value = {self.value}, '
+                     f'background_color = {self.colors[str(data)]}')
 
 
 class ThirdBand(BandColours):
     value = NumericProperty(0)
+    colors = DictProperty()
 
     def __init__(self, **kwargs):
+        Logger.debug(f'ThirdBand: __init__( {kwargs} )')
         super().__init__(**kwargs)
-        self.ids.third_dropdown.select(self.black)
         self.colors = {'0': self.black,
                        '1': self.brown,
                        '2': self.red,
@@ -88,73 +99,92 @@ class ThirdBand(BandColours):
                        '7': self.violet,
                        '8': self.grey,
                        '9': self.white}
-        Logger.info('ThirdBand: initialized')
+        self.ids.third_dropdown.select(self.value)
+        Logger.debug('ThirdBand: initialized')
 
-    def change_value(self, data):
+    def change_value(self, data: int):
+        Logger.debug(f'SecondBand: change_value( {data} )')
         self.value = data
-        Logger.info(f'ThirdBand: value = {self.value}')
+        self.ids.third_btn.background_color = self.colors[str(data)]
+        Logger.debug(f'ThirdBand: value = {self.value}, '
+                     f'background_color = {self.colors[str(data)]}')
 
 
 class MultiplierBand(BandColours):
-    value = NumericProperty(1)
+    value = NumericProperty(0)
+    colors = DictProperty()
 
     def __init__(self, **kwargs):
+        Logger.debug(f'MultiplierBand: __init__( {kwargs} )')
         super().__init__(**kwargs)
-        self.ids.multiplier_dropdown.select(self.black)
-        self.colors = {'1': self.black,
-                       '10': self.brown,
-                       '100': self.red,
-                       '1000': self.orange,
-                       '10000': self.yellow,
-                       '100000': self.green,
-                       '1000000': self.blue,
-                       '10000000': self.violet,
-                       '100000000': self.grey,
-                       '1000000000': self.white,
-                       '0.1': self.gold,
-                       '0.01': self.silver}
-        Logger.info('MultiplierBand: initialized')
+        self.colors = {'0': self.black,
+                       '1': self.brown,
+                       '2': self.red,
+                       '3': self.orange,
+                       '4': self.yellow,
+                       '5': self.green,
+                       '6': self.blue,
+                       '7': self.violet,
+                       '8': self.grey,
+                       '9': self.white,
+                       '-1': self.gold,
+                       '-2': self.silver}
+        self.ids.multiplier_dropdown.select(self.value)
+        Logger.debug('MultiplierBand: initialized')
 
-    def change_value(self, data):
+    def change_value(self, data: int):
+        Logger.debug(f'MultiplierBand: change_value( {data} )')
         self.value = data
-        Logger.info(f'MultiplierBand: value = {self.value}')
+        self.ids.multiplier_btn.background_color = self.colors[str(data)]
+        Logger.debug(f'MultiplierBand: value = {self.value}, '
+                     f'background_color = {self.colors[str(data)]}')
 
 
 class ToleranceBand(BandColours):
     value = NumericProperty(1.0)
+    colors = DictProperty()
 
     def __init__(self, **kwargs):
+        Logger.debug(f'ToleranceBand: __init__( {kwargs} )')
         super().__init__(**kwargs)
-        self.ids.tolerance_dropdown.select(self.brown)
         self.colors = {'1.0': self.brown,
                        '2.0': self.red,
                        '0.5': self.green,
                        '0.25': self.blue,
                        '0.1': self.violet,
                        '0.05': self.grey,
-                       '5': self.gold,
-                       '10': self.silver}
-        Logger.info('ToleranceBand: initialized')
+                       '5.0': self.gold,
+                       '10.0': self.silver}
+        self.ids.tolerance_dropdown.select(self.value)
+        Logger.debug('ToleranceBand: initialized')
 
-    def change_value(self, data):
+    def change_value(self, data: float):
+        Logger.debug(f'ToleranceBand: change_value( {data} )')
         self.value = data
-        Logger.info(f'ToleranceBand: value = {self.value}')
+        self.ids.tolerance_btn.background_color = self.colors[str(data)]
+        Logger.debug(f'ToleranceBand: value = {self.value}, '
+                     f'background_color = {self.colors[str(data)]}')
 
 
 class PPMBand(BandColours):
-    value = NumericProperty(1.0)
+    value = NumericProperty(100)
+    colors = DictProperty()
 
     def __init__(self, **kwargs):
+        Logger.debug(f'PPMBand: __init__( {kwargs} )')
         super().__init__(**kwargs)
-        self.ids.ppm_dropdown.select(self.brown)
         self.colors = {'100': self.brown,
                        '50': self.red,
                        '15': self.orange,
                        '25': self.yellow,
                        '10': self.blue,
                        '5': self.violet}
-        Logger.info('PPMBand: initialized')
+        self.ids.ppm_dropdown.select(self.value)
+        Logger.debug('PPMBand: initialized')
 
-    def change_value(self, data):
+    def change_value(self, data: int):
+        Logger.debug(f'PPMBand: change_value( {data} )')
         self.value = data
-        Logger.info(f'PPMBand: value = {self.value}')
+        self.ids.ppm_btn.background_color = self.colors[str(data)]
+        Logger.debug(f'PPMBand: value = {self.value}, '
+                     f'background_color = {self.colors[str(data)]}')
