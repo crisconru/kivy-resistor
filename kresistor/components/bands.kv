@@ -1,4 +1,5 @@
 #:kivy 1.0.0
+#:import colors kresistor.components.colors
 
 <ColorButton@Button>:
     background_normal: ''
@@ -8,270 +9,270 @@
     height: '48dp'
 
 <FirstBand>:
-    id: first_band
+    # id: first_band
     ColorButton:
         id: first_btn
         on_release: first_dropdown.open(self)
     DropDown:
         id: first_dropdown
-        on_select: first_band.change_value(args[1])
+        on_select: root.change_value(args[1])
         DropButton:
             id: first_btn_brown
-            background_color: first_band.brown
+            background_color: colors['BROWN']
             on_release: first_dropdown.select(1)
         DropButton:
             id: first_btn_red
-            background_color: first_band.red
+            background_color: colors['RED']
             on_release: first_dropdown.select(2)
         DropButton:
             id: first_btn_orange
-            background_color: first_band.orange
+            background_color: colors['ORANGE']
             on_release: first_dropdown.select(3)
         DropButton:
             id: first_btn_yellow
-            background_color: first_band.yellow
+            background_color: colors['YELLOW']
             on_release: first_dropdown.select(4)
         DropButton:
             id: first_btn_green
-            background_color: first_band.green
+            background_color: colors['GREEN']
             on_release: first_dropdown.select(5)
         DropButton:
             id: first_btn_blue
-            background_color: first_band.blue
+            background_color: colors['BLUE']
             on_release: first_dropdown.select(6)
         DropButton:
             id: first_btn_violet
-            background_color: first_band.violet
+            background_color: colors['VIOLET']
             on_release: first_dropdown.select(7)
         DropButton:
             id: first_btn_grey
-            background_color: first_band.grey
+            background_color: colors['GREY']
             on_release: first_dropdown.select(8)
         DropButton:
             id: first_btn_white
-            background_color: first_band.white
+            background_color: colors['WHITE']
             on_release: first_dropdown.select(9)
 <SecondBand>:
-    id: second_band
+    # id: second_band
     ColorButton:
         id: second_btn
         on_release: second_dropdown.open(self)
     DropDown:
         id: second_dropdown
-        on_select: second_band.change_value(args[1])
+        on_select: root.change_value(args[1])
         DropButton:
-            id: second_btn_brown
-            background_color: second_band.black
+            id: second_btn_black
+            background_color: colors['BLACK']
             on_release: second_dropdown.select(0)
         DropButton:
             id: second_btn_brown
-            background_color: second_band.brown
+            background_color: colors['BROWN']
             on_release: second_dropdown.select(1)
         DropButton:
             id: second_btn_red
-            background_color: second_band.red
+            background_color: colors['RED']
             on_release: second_dropdown.select(2)
         DropButton:
             id: second_btn_orange
-            background_color: second_band.orange
+            background_color: colors['ORANGE']
             on_release: second_dropdown.select(3)
         DropButton:
             id: second_btn_yellow
-            background_color: second_band.yellow
+            background_color: colors['YELLOW']
             on_release: second_dropdown.select(4)
         DropButton:
             id: second_btn_green
-            background_color: second_band.green
+            background_color: colors['GREEN']
             on_release: second_dropdown.select(5)
         DropButton:
             id: second_btn_blue
-            background_color: second_band.blue
+            background_color: colors['BLUE']
             on_release: second_dropdown.select(6)
         DropButton:
             id: second_btn_violet
-            background_color: second_band.violet
+            background_color: colors['VIOLET']
             on_release: second_dropdown.select(7)
         DropButton:
             id: second_btn_grey
-            background_color: second_band.grey
+            background_color: colors['GREY']
             on_release: second_dropdown.select(8)
         DropButton:
             id: second_btn_white
-            background_color: second_band.white
+            background_color: colors['WHITE']
             on_release: second_dropdown.select(9)
 <ThirdBand>:
-    id: third_band
+    # id: third_band
     ColorButton:
         id: third_btn
         on_release: third_dropdown.open(self)
     DropDown:
         id: third_dropdown
-        on_select: third_band.change_value(args[1])
+        on_select: root.change_value(args[1])
         DropButton:
-            id: third_btn_brown
-            background_color: third_band.black
+            id: third_btn_black
+            background_color: colors['BLACK']
             on_release: third_dropdown.select(0)
         DropButton:
             id: third_btn_brown
-            background_color: third_band.brown
+            background_color: colors['BROWN']
             on_release: third_dropdown.select(1)
         DropButton:
             id: third_btn_red
-            background_color: third_band.red
+            background_color: colors['RED']
             on_release: third_dropdown.select(2)
         DropButton:
             id: third_btn_orange
-            background_color: third_band.orange
+            background_color: colors['ORANGE']
             on_release: third_dropdown.select(3)
         DropButton:
             id: third_btn_yellow
-            background_color: third_band.yellow
+            background_color: colors['YELLOW']
             on_release: third_dropdown.select(4)
         DropButton:
             id: third_btn_green
-            background_color: third_band.green
+            background_color: colors['GREEN']
             on_release: third_dropdown.select(5)
         DropButton:
             id: third_btn_blue
-            background_color: third_band.blue
+            background_color: colors['BLUE']
             on_release: third_dropdown.select(6)
         DropButton:
             id: third_btn_violet
-            background_color: third_band.violet
+            background_color: colors['VIOLET']
             on_release: third_dropdown.select(7)
         DropButton:
             id: third_btn_grey
-            background_color: third_band.grey
+            background_color: colors['GREY']
             on_release: third_dropdown.select(8)
         DropButton:
             id: third_btn_white
-            background_color: third_band.white
+            background_color: colors['WHITE']
             on_release: third_dropdown.select(9)
 <MultiplierBand>:
-    id: multiplier_band
+    # id: multiplier_band
     ColorButton:
         id: multiplier_btn
         on_release: multiplier_dropdown.open(self)
     DropDown:
         id: multiplier_dropdown
-        on_select: multiplier_band.change_value(args[1])
+        on_select: root.change_value(args[1])
         DropButton:
-            id: multiplier_btn_brown
-            background_color: multiplier_band.black
+            id: multiplier_btn_black
+            background_color: colors['BLACK']
             on_release: multiplier_dropdown.select(0)
         DropButton:
             id: multiplier_btn_brown
-            background_color: multiplier_band.brown
+            background_color: colors['BROWN']
             on_release: multiplier_dropdown.select(1)
         DropButton:
             id: multiplier_btn_red
-            background_color: multiplier_band.red
+            background_color: colors['RED']
             on_release: multiplier_dropdown.select(2)
         DropButton:
             id: multiplier_btn_orange
-            background_color: multiplier_band.orange
+            background_color: colors['ORANGE']
             on_release: multiplier_dropdown.select(3)
         DropButton:
             id: multiplier_btn_yellow
-            background_color: multiplier_band.yellow
+            background_color: colors['YELLOW']
             on_release: multiplier_dropdown.select(4)
         DropButton:
             id: multiplier_btn_green
-            background_color: multiplier_band.green
+            background_color: colors['GREEN']
             on_release: multiplier_dropdown.select(5)
         DropButton:
             id: multiplier_btn_blue
-            background_color: multiplier_band.blue
+            background_color: colors['BLUE']
             on_release: multiplier_dropdown.select(6)
         DropButton:
             id: multiplier_btn_violet
-            background_color: multiplier_band.violet
+            background_color: colors['VIOLET']
             on_release: multiplier_dropdown.select(7)
         DropButton:
             id: multiplier_btn_grey
-            background_color: multiplier_band.grey
+            background_color: colors['GREY']
             on_release: multiplier_dropdown.select(8)
         DropButton:
             id: multiplier_btn_white
-            background_color: multiplier_band.white
+            background_color: colors['WHITE']
             on_release: multiplier_dropdown.select(9)
         DropButton:
             id: multiplier_btn_gold
-            background_color: multiplier_band.gold
+            background_color: colors['GOLD']
             on_release: multiplier_dropdown.select(-1)
         DropButton:
             id: multiplier_btn_silver
-            background_color: multiplier_band.silver
+            background_color: colors['SILVER']
             on_release: multiplier_dropdown.select(-2)
 <ToleranceBand>:
-    id: tolerance_band
+    # id: tolerance_band
     ColorButton:
         id: tolerance_btn
         on_release: tolerance_dropdown.open(self)
     DropDown:
         id: tolerance_dropdown
-        on_select: tolerance_band.change_value(args[1])
+        on_select: root.change_value(args[1])
         DropButton:
             id: tolerance_btn_brown
-            background_color: tolerance_band.brown
+            background_color: colors['BROWN']
             on_release: tolerance_dropdown.select(1.0)
         DropButton:
             id: tolerance_btn_red
-            background_color: tolerance_band.red
+            background_color: colors['RED']
             on_release: tolerance_dropdown.select(2.0)
         DropButton:
             id: tolerance_btn_green
-            background_color: tolerance_band.green
+            background_color: colors['GREEN']
             on_release: tolerance_dropdown.select(0.5)
         DropButton:
             id: tolerance_btn_blue
-            background_color: tolerance_band.blue
+            background_color: colors['BLUE']
             on_release: tolerance_dropdown.select(0.25)
         DropButton:
             id: tolerance_btn_violet
-            background_color: tolerance_band.violet
+            background_color: colors['VIOLET']
             on_release: tolerance_dropdown.select(0.1)
         DropButton:
             id: tolerance_btn_grey
-            background_color: tolerance_band.grey
+            background_color: colors['GREY']
             on_release: tolerance_dropdown.select(0.05)
         DropButton:
             id: tolerance_btn_gold
-            background_color: tolerance_band.gold
+            background_color: colors['GOLD']
             on_release: tolerance_dropdown.select(5.0)
         DropButton:
             id: tolerance_btn_silver
-            background_color: tolerance_band.silver
+            background_color: colors['SILVER']
             on_release: tolerance_dropdown.select(10.0)
 <PPMBand>:
-    id: ppm_band
+    # id: ppm_band
     ColorButton:
         id: ppm_btn
         on_release: ppm_dropdown.open(self)
     DropDown:
         id: ppm_dropdown
-        on_select: ppm_band.change_value(args[1])
+        on_select: root.change_value(args[1])
         DropButton:
             id: ppm_btn_brown
-            background_color: ppm_band.brown
+            background_color: colors['BROWN']
             on_release: ppm_dropdown.select(100)
         DropButton:
             id: ppm_btn_red
-            background_color: ppm_band.red
+            background_color: colors['RED']
             on_release: ppm_dropdown.select(50)
         DropButton:
-            id: ppm_btn_green
-            background_color: ppm_band.orange
+            id: ppm_btn_orange
+            background_color: colors['ORANGE']
             on_release: ppm_dropdown.select(15)
         DropButton:
-            id: ppm_btn_blue
-            background_color: ppm_band.yellow
+            id: ppm_btn_yellow
+            background_color: colors['YELLOW']
             on_release: ppm_dropdown.select(25)
         DropButton:
-            id: ppm_btn_violet
-            background_color: ppm_band.blue
+            id: ppm_btn_blue
+            background_color: colors['BLUE']
             on_release: ppm_dropdown.select(10)
         DropButton:
-            id: ppm_btn_grey
-            background_color: ppm_band.violet
+            id: ppm_btn_violet
+            background_color: colors['VIOLET']
             on_release: ppm_dropdown.select(5)
