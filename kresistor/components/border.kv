@@ -1,11 +1,16 @@
 #:kivy 1.0.0
 
-<Border@AnchorLayout>:
-    anchor_x: 'center'
-    anchor_y: 'center'
+#<Border@AnchorLayout>:
+#    anchor_x: 'center'
+#    anchor_y: 'center'
 
-    Button:
-        id: root.btn
-        background_normal: ''
-        background_color: root.border_color
-        on_release: root.change_color()
+ #   Button:
+#        id: root.btn
+#        background_normal: ''
+#        background_color: root.border_color
+#        on_release: root.change_color()
+
+<Border@Button>:
+    background_normal: ''
+    background_color: self.border_color
+    on_release: self.change_color()

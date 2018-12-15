@@ -1,7 +1,8 @@
 from pathlib import Path
 from kivy.lang.builder import Builder
 from kivy.logger import Logger
-from kivy.uix.anchorlayout import AnchorLayout
+# from kivy.uix.anchorlayout import AnchorLayout
+from kivy.uix.button import Button
 from kivy.properties import ListProperty, NumericProperty, StringProperty
 
 
@@ -9,7 +10,7 @@ kv_file = str(Path(__file__))[:-3] + '.kv'
 Builder.load_file(kv_file)
 
 
-class Border(AnchorLayout):
+class Border(Button):
     # Colors
     orange = ListProperty([1, 0.8, 0.4, 1])
     blue = ListProperty([0.2, 0.8, 1, 1])
