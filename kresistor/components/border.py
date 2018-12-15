@@ -4,6 +4,7 @@ from kivy.logger import Logger
 # from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.button import Button
 from kivy.properties import ListProperty, NumericProperty, StringProperty
+from kresistor.components import FOUR, FIVE, SIX
 
 
 kv_file = str(Path(__file__))[:-3] + '.kv'
@@ -11,11 +12,6 @@ Builder.load_file(kv_file)
 
 
 class Border(Button):
-    # Colors
-    orange = ListProperty([1, 0.8, 0.4, 1])
-    blue = ListProperty([0.2, 0.8, 1, 1])
-    green = ListProperty([0.2, 0.6, 0.4, 1])
-    # colors = {'4': orange, '5': blue, '6': green}
     # Property to change the color
     border_color = ListProperty()
     # Numeric values
@@ -29,7 +25,7 @@ class Border(Button):
     def __init__(self, **kwargs):
         Logger.debug(f'Border: __init__( {kwargs} )')
         super().__init__(**kwargs)
-        self.colors = {'4': self.orange, '5': self.blue, '6': self.green}
+        self.colors = {'4': FOUR, '5': FIVE, '6': SIX}
         self.change_color(0)
         self.change_orientation()
         Logger.debug('Border: initializated')
