@@ -1,5 +1,24 @@
 #:kivy 1.0.0
+#:import colors kresistor.components.colors
 
-<Wire@AnchorLayout>:
-    anchor_x: 'center'
-    anchor_y: 'center'
+<WireButton@Button>:
+    background_normal: ''
+    background_down: ''
+
+<Wire>:
+    WireButton:
+        id: wire_first 
+        size_hint: 1
+        background_color: colors['TRANSPARENT']
+    Button:
+        id: wire_second
+        size_hint: 2
+        background_color: colors['GREY']
+        background_normal: ''
+        background_down: ''
+    Buttton:
+        id: wire_third
+        size_hint: 1
+        background_color: colors['TRANSPARENT']
+        background_normal: ''
+        background_down: ''
