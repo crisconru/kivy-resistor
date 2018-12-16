@@ -11,7 +11,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 kresistor/__pycache__/
-kresistor/parts/__pycache__/
+kresistor/components/__pycache__/
 *.py[cod]
 *$py.class
 
