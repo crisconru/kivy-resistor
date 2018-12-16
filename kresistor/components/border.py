@@ -1,10 +1,10 @@
 from pathlib import Path
 from kivy.lang.builder import Builder
 from kivy.logger import Logger
-# from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.button import Button
-from kivy.properties import ListProperty, NumericProperty, StringProperty
-from kresistor.components import FOUR, FIVE, SIX
+from kivy.properties import ListProperty, OptionProperty, NumericProperty,\
+    StringProperty, DictProperty
+from kresistor.components import colors
 
 
 kv_file = str(Path(__file__))[:-3] + '.kv'
@@ -12,6 +12,9 @@ Builder.load_file(kv_file)
 
 
 class Border(Button):
+    # colors
+    ccolors = DictProperty({'4': colors['FOUR'], '5': colors['FIVE'],
+                            '6': colors['SIX']})
     # Property to change the color
     border_color = ListProperty()
     # Numeric values
@@ -19,13 +22,12 @@ class Border(Button):
     maxi = NumericProperty(6)
     bands = NumericProperty()
     # Geometrical property
-    orientations = ListProperty(['left', 'top', 'right', 'down'])
-    orientation = StringProperty()
+    orientation = OptionProperty('left', options=['left', 'top', 'right', 'down'])
 
     def __init__(self, **kwargs):
         Logger.debug(f'Border: __init__( {kwargs} )')
         super().__init__(**kwargs)
-        self.colors = {'4': FOUR, '5': FIVE, '6': SIX}
+        # self.ccolors = {'4': colors['FOUR'], '5': colors['FIVE'], '6': colors['SIX']}
         self.change_color(0)
         self.change_orientation()
         Logger.debug('Border: initializated')
@@ -36,9 +38,9 @@ class Border(Button):
             self.bands = self.bands + 1 if self.bands < self.maxi \
                 else self.mini
         else:
-            self.bands = self.bands if str(self.bands) in self.colors \
+            self.bands = self.bands if str(self.bands) in self.ccolors \
                 else self.mini
-        self.border_color = self.colors[str(self.bands)]
+        self.border_color = self.ccolors[str(self.bands)]
         Logger.debug(f'Border: bands = {str(self.bands)}')
 
     def change_orientation(self, orientation: str = 'left'):
